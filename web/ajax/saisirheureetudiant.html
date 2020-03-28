@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+
+    <head>
+        <title>Saisir Presence Etudiant</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href='ajax/cssetudiant.css' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"> 
+        <link rel="stylesheet" href="/resources/demos/style.css"> 
+        
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <script>
+            $( function() {
+              $( "#datepicker" ).datepicker({ dateFormat: 'yy-mm-dd' }).value;
+            } );
+        </script>
+    </head>
+     
+     <body>
+        <div class="top_decor">
+            <div class="logo"><img src="" alt="" class="logoImg"></div>
+        </div>
+        
+        <h2>Saisissez vos heures de presence</h2>
+
+
+         <div class="infos_etudiant">
+            <div class="infos_etudiant_tab" >
+                <div>
+                    
+                    <h3>Bienvenu</h3>                   
+                    <p id="nom"></p>
+                    
+
+                </div>
+            </div>       
+        </div>
+        <div class="infos_creneau">
+            <h3>Selectionnez les informations sur les creneaux que vous souhaitez renseigner</h3>
+                <Table class="infos_creneau_tab" border="1">    
+                    <tr>
+                        <th>
+                            Choisir date
+                        </th>
+                        <th>
+                            Choisir heure 
+                        </th>                       
+                        <th>
+                            Choisir type creneau
+                        </th>
+                        <th>
+                            choisir etat presence
+                        </th>  
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="text" id="datepicker">
+                        </td>
+                     <!--  <td>
+                            <input type="text" id="heureDeb">
+                        </td>
+                        <td>
+                            <input type="text" id="minute">
+                        </td> -->
+                        <td>
+                        <label for="time" class="timePicker">Start Time</label>
+                            <input type="time" name="time" id="heureDeb" class="timePicker" required/>
+                            <span id="msg_timeErr">input time between 8h and 20h, button padlock !</span>
+                         </td>
+                     
+                        <td>
+                            <select name="typeCreneau" id="typeCreneau">
+                                <option value="">--Choisissez un type de creneau--</option>
+                                <option value="projet">projet</option>
+                                <option value="conference">conference</option>
+                            </select>
+                        </td>
+                        <td>
+                           
+                            <select name="presence" id="presence">
+                                <option value="">--Choisissez presence--</option>
+                                <option value="present">present</option>
+                                <option value="absent">absent</option>
+                            </select>
+                        </td>
+                    </tr>
+                    
+                </Table>
+        </div>
+        <div id="espace"></div>
+        <br>
+        <div class="div_bouton">
+            <button id="btn_valider">Valider</button>
+            
+        
+         
+        
+        
+        <button class="btn_v" ><a href="etudiantnav" class="active">retour</a></button>
+        
+       </div>
+        <script type="text/JavaScript" src="ajax/saisirpresenceetudiant.js"></script>
+     </body>
+
+
+
+<!--  
+                                <input type="checkbox" id="present"   title="present">
+                                <input type="checkbox" id="retard"    title="retard">
+                                <input type="checkbox" id="abscencej" title="abscencej">
+                                <input type="checkbox" id="abscent"   title="abscent" >-->

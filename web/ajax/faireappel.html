@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>PageAppel</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="ajax/csspageAppel.css" type="text/css" />
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+        <link rel="stylesheet" href="/resources/demos/style.css">
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <script>
+            $( function() {
+              $( "#datepicker" ).datepicker({ dateFormat: 'yy-mm-dd' }).value;
+            } );
+        </script>
+    </head>
+    
+      
+    
+    <body>
+       <header> <!-- title logo-->
+           <div class="entete">                                   
+                    
+
+                    <div class="info_personne">
+                        <table class="info_personne_tab" border="1">
+                            <tr>
+                                <th>Bienvenu</th>                                                                   
+                                                                                                 
+                            </tr>
+                        </table>
+                    </div>            
+             <h2>Feuille de Presence</h2>
+        </div>
+    </header>   
+        
+     <!-- formulaire -->   
+                    
+               
+                    <Table class="renseigner_creneau_tab" border="0">
+                            <caption>Information du creneau</caption> 
+                        <tr>
+                            <th>Choisir formation</th>
+                            <th>Choisir cours</th>
+                            <th>Choisir Date:</th>
+                        </tr>  
+                        <tr> 
+                            <td>                                
+                                <select name="formation" id="formation">
+                                    <option value="Formation">Formation</option>
+                                    <option value="MIAGEIPM"> IPM</option>
+                                    <option value="MIAGEISIAD"> ISIAD </option>
+                                </select>
+                            </td>
+                        
+                            <td>                                                                 
+                                <select name="cours" id="cours">
+                                    <option></option>
+                                </select>                                
+                            </td>
+                         
+                            <td>                                               
+                                <input type="text" id="datepicker" >                               
+                            </td>
+                        </tr>          
+                     </Table>      
+                 
+               
+                    <table class="info_dh_tab" border="0">                            
+                        <tr>
+                            <th>Heure début</th>
+                            <th>Dur&eacutee: en minutes</th>
+                            <th>Choisir groupeTD :</th>   
+                            <th>Choisir Type</th> 
+                        </tr> 
+                        <tr>
+                            <td>                                
+                                    <!--  <span> Heure:  </span><input type="text" id="heure" style="width:30px"><br/>
+                                   <span> Minute:</span><input type="text" id="minute" style="width:30px"><br/> -->
+                                    <!--<label for="time" class="timePicker">Start Time</label>-->
+                                <input type="time" name="time" id="heureDeb" class="timePicker" required/>
+                                <span id="msg_timeErr"  >input time between 8h and 20h, button padlock !</span>                                
+                            </td>
+                            <td>
+                                <input type="text" id="duree" >Mins
+                            </td>
+                            <td>                                                                 
+                                <select name="groupe" id="groupe">  
+                                    <option></option>
+                                    <option>IPM1920TD1</option>
+                                    <option>IPM1920TD2</option>
+                                    <option>IPM1920FI</option>
+                                    <option>IPM1920FA</option>
+                                </select>                                
+                            </td>
+                            <td>                                
+                                <select name="typeCours" id="typeCours"> 
+                                        <option></option>
+                                        <option>Exam</option>
+                                        <option>Cours</option>
+                                        <option>TD</option>
+                                </select>
+                            </td>
+                        </tr>           
+                    </table>
+
+                       
+<!--  liste étudiant -->  <hr/>
+    <div class="list_etudiant"> 
+        <table id="listEtudiant" border="1" class="listEtudiant">
+            <th>Photo</th>
+            <th style="display:none;">Identifiant</th>
+            <th>Nom</th>
+            <th>Pr&eacutenom</th>
+            <th>Etat Preacutesent</th>
+        </table>  
+
+    </div>  
+
+        <div class = "div_bouton">        
+          <input type="submit" value="valider"  class="bouton btn_valider" id="btn_valider"/>
+          <button class="btn_v" ><a href="getionE" class="active">retour</a></button>
+        </div>
+       <script type="text/JavaScript" src="ajax/faireappel.js"></script>
+    </body>
+</html>
+                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+               
+                
+               

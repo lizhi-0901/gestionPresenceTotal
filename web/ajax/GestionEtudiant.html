@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+
+    <head>
+        <title>Gestion Enseignant</title>
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="ajax/cssPageGestion.css" type="text/css" />
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+        <script type="text/JavaScript" src="ajax/GestionEtudiant.js"></script>
+
+             
+        <body>
+            <ul>
+                <li><a href="GestionEnseignant">GestionEnseignant</a></li>
+                <li><a href="" class="active">GestionEtudiant</a></li>
+                <li><a href="GestionCours">GestionCours</a></li>
+                <li><a href="GestionPeriode">GestionP&eacuteriode</a></li>
+                <li><a href="login">D&eacuteconnecter</a></li>
+            </ul>
+        <div>
+            <span> Nom:  </span><input type="text" id="nomPersonne" style="width:60px" onkeyup="this.value=this.value.replace(/[^a-zA-Z]/g,'')">
+            <span> Prenom: </span><input type="text" id="prenomPersonne" style="width:60px" onkeyup="this.value=this.value.replace(/[^a-zA-Z]/g,'')"><br/>
+            <span id ="verifPersonneRes"></span><br/>
+            <div>
+                <input type="button" id ="btn_consulter" value="Consulter" disabled="disabled" />
+                <input type="button" id ="btn_ajouter" value="Ajouter" disabled="disabled" />
+                <input type="button" id ="btn_supprimer" value="Supprimer" disabled="disabled" />
+            </div>
+            
+            <div id="infoAfficher" style="display:none">
+                <form onsubmit="return false">
+                    <table border="2">
+                        <tr><th colspan="2">Etudiant</th></tr>
+                            <tr><td>Nom</td><td><input type="text" value="" id="nom" disabled='' style="width:60px"></td></tr>
+                
+                            <tr><td>Prenom</td><td><input type="text" value="" id="prenom" disabled='' style="width:60px"></td></tr>
+                            
+                            <tr><td>Numero Tel</td><td><input type="number" value="" id="numTel" min="100000000" max="9999999999" title="10 chiffres"></td></tr>
+
+                            <tr><td>Adresse Mail</td><td><input type="email" value="" id="eMail" pattern="^[a-z0-9]+([._\\-]*[a-z0-9])*@([a-z0-9]+[-a-z0-9]*[a-z0-9]+.){1,63}[a-z0-9]+$" title="Respectez format d'email"></tr>
+
+                            <tr><td>Type Formation</td><td><input type="text" maxlength="2" id="formation" onkeyup="this.value=this.value.replace(/[^a-zA-Z]/g,'')"></td></tr>
+                            
+                            <tr><td>Entreprise</td><td><input type="text"  id="entreprise" onkeyup="this.value=this.value.replace(/[^a-zA-Z]/g,'')"></td></tr>
+                            
+                            <tr><td>Entreprise Tel</td><td><input type="number" value="" id="numTelE" min="100000000" max="9999999999" title="10 chiffres"></td>></tr>
+                            
+                            <tr><td>Entreprise Mail</td><td><input type="email" value="" id="eMailE" pattern="^[a-z0-9]+([._\\-]*[a-z0-9])*@([a-z0-9]+[-a-z0-9]*[a-z0-9]+.){1,63}[a-z0-9]+$" title="Respectez format d'email"></tr>
+                            
+                    </table>
+                    <input type="submit" id ="btn_modifier" value="modifier" style="display: none"/>
+                    <input type="submit" id ="btn_valider" value="valider" style="display: none"/>
+                </form>
+            </div>
+            
+        </div>
+        </body>
+</html>

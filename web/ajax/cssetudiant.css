@@ -1,0 +1,154 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 2020-3-23, 21:44:06
+    Author     : dell
+*/
+body{
+  /*  background: url(images/backgroundLogo.jpg) no-repeat;
+    background-size: 100%; */
+    background-color :#fafafa;
+}
+h3{
+ color: #f34545;
+}
+
+
+.logoImg{    
+  position: relative;
+  top:0;
+  left:0;
+  width:120px;   
+  height:96px; 
+}
+.top_decor{
+    background-color:  #f8f4f4;
+}
+
+
+.infos_creneau{
+  
+  margin-left: 3%;
+}
+
+.infos_etudiant_tab{
+  margin-left:5%;
+}
+.div_photo_etu{
+    border-style: solid ;
+    border-width:1px;
+    width:80px;   
+    height:100px; 
+    margin: 10px ;
+}
+
+.photo_etu{
+    width:80px;   
+    height:100px;     
+}
+
+ul{
+    list-style: none; 
+    font-size: 1em;
+    padding: 10px;
+}
+.info_etu{
+   display: inline-block;
+   margin-left: 20px;
+}
+
+
+table {
+  border: 1px solid #d84f50; 
+  font-family:georgia, serif;
+  text-align:center;
+  border-collapse: collapse; 
+}
+
+tr:hover {
+  background-color: #f6e8e8; 
+}
+
+th {
+  border: 1px solid #d84f50; 
+  background-color: #ffaaaa;
+  font-weight: bold;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 10px;
+  padding-right: 10px;
+  text-align: center;
+}
+
+td {
+  border: 1px solid #d84f50; 
+  text-align: right;
+  padding: 4px;
+}
+
+button {
+    font:Bold 13px Arial;
+    background:#d34836;
+    color:#cbabab;
+   
+    border: none;
+    color: black;
+    margin-left: 30%;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;    
+    
+    transition-property: width;
+    transition-duration: 1s;
+    transition-timing-function: ease;
+          
+}
+button:hover{
+    opacity:50%;
+   
+}
+/*
+.infos_etudiant_tab>tr{     
+     border: none;
+}*/
+
+
+
+/* ---------------------
+  CSS timePicker 
+   ---------------------
+*/
+
+label.timePicker {
+  color: #945;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+input.timePicker {
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='40' height='40'><circle cx='20' cy='20' r='18.5' fill='none' stroke='%23222' stroke-width='3' /><path d='M20,4 20,8 M4,20 8,20 M36,20 32,20 M20,36 20,32' stroke='%23bbb' stroke-width='1' /><circle cx='20' cy='20' r='2' fill='%23222' stroke='%23222' stroke-width='2' /></svg>"), url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='40' height='40'><path d='M18.5,24.5 19.5,4 20.5,4 21.5,24.5 Z' fill='%23222' style='transform:rotate(120deg); transform-origin: 50% 50%;' /></svg>"), url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='40' height='40'><path d='M18.5,24.5 19.5,8.5 20.5,8.5 21.5,24.5 Z' style='transform:rotate(20deg); transform-origin: 50% 50%;' /></svg>");
+  background-position: 0.5rem 50%;
+  background-repeat: no-repeat;
+  background-size: 2rem 2rem;
+  border: 0.25rem solid #945;
+  border-radius: 1rem;
+  color: #222;
+  font-size: 2rem;
+  padding: 0.5rem 0.5rem 0.5rem 3rem;
+  transition: backgroundImage 0.25s;
+}
+
+input.timePicker:focus {
+  outline: 2px dashed #945;
+  outline-offset: 3px;
+}
+
+
+#msg_timeErr{
+  display: none;
+  color:red;
+}

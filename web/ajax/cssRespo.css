@@ -1,0 +1,163 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 20 mars 2020, 16:09:28
+    Author     : lizhiwang
+*/
+
+.logo{
+    
+    border-style: solid ;
+    border-width:1px;
+    width:80px;   
+    height:100px; 
+    margin: 10px ;
+    margin-left: -5px ;
+}
+
+.top_decor{
+    background-color: grey ; 
+}
+
+h2{
+    margin-left: 15%;
+}
+
+.saisirDiv{
+    
+    margin-left: 30%;
+    margin-bottom: 30px;
+}
+
+
+select{
+    width: 140px;
+    height: 30px;
+    margin: 10px;
+}
+
+select:hover {    
+border-color: #5efffd;
+border:2px solid  #5efffd;
+}
+
+option{
+     width: 140px;
+     height: 30px;        
+}
+
+.textboxId{
+     width: 140px;
+    height: 30px;  
+     margin: 10px;
+}
+
+.textboxId:hover {    
+   border:2px solid  #5efffd;
+}
+
+
+.div_photo_etu{
+    border-style: solid ;
+    border-width:1px;
+    width:80px;   
+    height:100px; 
+    margin: 10px ;
+}
+
+.infos_haut{
+    display: inline-block;
+}
+
+ul{
+    list-style: none; 
+    font-size: 1.5em;
+    padding: 10px;
+}
+
+th {
+	font: bold 11px "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+	color: #4f6b72;
+	border-right: 1px solid #C1DAD7;
+	border-bottom: 1px solid #C1DAD7;
+	border-top: 1px solid #C1DAD7;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	text-align: left;
+	padding: 6px 6px 6px 12px;
+	background: #CAE8EA url(images/bg_header.jpg) no-repeat;
+}
+ 
+th.nobg {
+	border-top: 0;
+	border-left: 0;
+	border-right: 1px solid #C1DAD7;
+	background: none;
+}
+ 
+td {
+	border-right: 1px solid #C1DAD7;
+	border-bottom: 1px solid #C1DAD7;
+	background: #fff;
+	padding: 6px 6px 6px 12px;
+	color: #4f6b72;
+}
+
+
+table
+{
+    border-collapse:collapse;
+    margin: 20px;
+    
+}
+
+
+
+
+.etudiant{
+    
+     clear: left;
+     margin-left: 20%;
+    
+}
+
+.div_bouton{
+    margin-left:  10%;
+
+}
+
+ .btn_v {
+    background-color:#e7e7e7;
+    border: none;
+    color: black;
+    margin:20px;
+    margin-left: 5%;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    
+    transition-property: width;
+    transition-duration: 1s;
+    transition-timing-function: ease;
+          
+}
+
+.btn_v:hover{
+    opacity:50%;
+   
+}
+
+
+.etudiant{    
+    display: none;
+}
+
+.etudiant_show{
+    display:block;
+}
+

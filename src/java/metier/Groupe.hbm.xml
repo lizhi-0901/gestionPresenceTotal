@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Mar 18, 2020 6:08:12 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="metier.Groupe" table="Groupe" catalog="db_21509151" optimistic-lock="version">
+        <id name="idGroupe" type="string">
+            <column name="idGroupe" length="25" />
+            <generator class="assigned" />
+        </id>
+        <property name="nomGroupe" type="string">
+            <column name="nomGroupe" length="25" not-null="true" />
+        </property>
+        <property name="typeGroupe" type="string">
+            <column name="typeGroupe" length="25" not-null="true" />
+        </property>
+        <property name="dateDeb" type="string">
+            <column name="dateDeb" length="15" not-null="true" />
+        </property>
+        <property name="dateFin" type="string">
+            <column name="dateFin" length="15" not-null="true" />
+        </property>
+        
+        <set name="creneaus" table="AffecterGroupe" inverse="false" lazy="true" fetch="select">
+            <key>
+                <column name="idGroupe" length="25" not-null="true" />
+            </key>
+            <many-to-many entity-name="metier.Creneau">
+                <column name="idCreneau" length="25" not-null="true" />
+            </many-to-many>
+        </set>
+        <set name="personnels" table="Appartenir" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="idGroupe" length="25" not-null="true" />
+            </key>
+            <many-to-many entity-name="metier.Personnel">
+                <column name="idPersonne" length="25" not-null="true" />
+            </many-to-many>
+        </set>
+    </class>
+</hibernate-mapping>

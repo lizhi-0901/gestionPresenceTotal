@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>validation responsable</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href='ajax/cssRespo.css' rel='stylesheet' type='text/css'>
+    </head>
+    <body>
+        
+
+        <h2>valider ficher stagiaire</h2>
+        <div class="saisirDiv">
+            
+
+           
+            <span > choisr l'annee</span><br/>
+            <select name="annee" id="annee" class="select1 info_saisi">
+                        <option value=""> annee</option>
+                        <option value="2018"> 2018</option>
+                        <option value="2019"> 2019 </option>
+                        <option value="2020"> 2020</option>
+            </select>
+            <br>
+            <span > choisr un mois</span><br/>
+            <select name="mois" id="mois" class="info_saisi">
+                        <option value="01"> 01</option>
+                        <option value="02"> 02 </option>
+                        <option value="03"> 03</option>
+                        <option value="04"> 04 </option>
+                        <option value="05"> 05</option>
+                        <option value="06"> 06 </option>
+                        <option value="07"> 07</option>
+                        <option value="08"> 08 </option>
+                        <option value="09"> 09</option>
+                        <option value="10"> 10 </option>
+                        <option value="11"> 11</option>
+                        <option value="12"> 12 </option>
+                    </select>
+            <br>
+            
+            <input type="button" id="affecter" value="chercher" class="btn_v">
+        </div>   <hr> 
+        
+        <div id ="div_etu" class="etudiant">
+        
+        
+        <h3>fichier stagiaire mensuelle</h3>
+        <div>
+            <div>
+            <div class="div_photo_etu appel infos_haut"  >
+                    <img  alt="" src="ajax/images.jpg" >  
+                            
+            </div>
+            
+                <ul class="div_name infos_haut">
+                    <li id="nom"> nom </li>
+                    <li id="prenom"> prenom </li>                    
+                </ul>
+
+
+           
+        </div>
+    	 <div class="feuille_emarg_mens">
+                <table class="feuille_emarg_mens_tab" border="1" id="tab_feuille">
+                    <tr>
+                        <th colspan="4"><img  alt="" src="ajax/ut1.png" height="60" width="120">  </th>
+                        <th colspan="10"></th>
+                        
+                    </tr>
+                    <tr>
+                        <th rowspan="2">Date</th>
+                        <th colspan="5">matin</th>
+                        <th colspan="5">Apres-midi</th>
+                        <th rowspan="2">Total heures E par jour</th>
+                        <th rowspan="2">Total heures D par jour</th>
+                        <th rowspan="2">Total heures Abs par jour</th>
+                    </tr>
+                    <tr> 
+                    	<td>heures * E</td>
+                    	<td>heures * D</td>
+                    	<td>heures * Abs</td>
+                    	<td>Signature stagiaire</td>
+                    	<td>Site**</td>
+                    	<td>heures * E</td>
+                    	<td>heures * D</td>
+                    	<td>heures * Abs</td>
+                    	<td>Signature stagiaire</td>
+                    	<td>Site**</td>
+                    </tr>
+                    
+                    
+                </table>
+            
+          
+        </div>
+       <div class="div_bouton">
+        
+        
+        <button class="btn_v" ><a href="etuges" class="active">retour</a></button>
+        
+        
+        
+    </div>
+        </div>
+        <script type="text/JavaScript" src="ajax/etufeuille.js"></script>
+    </body>
+</html>

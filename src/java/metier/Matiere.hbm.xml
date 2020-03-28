@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Mar 18, 2020 6:08:12 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="metier.Matiere" table="Matiere" catalog="db_21509151" optimistic-lock="version">
+        <id name="libelleMatiere" type="string">
+            <column name="libelleMatiere" length="50" />
+            <generator class="assigned" />
+        </id>
+        <property name="initiale" type="string">
+            <column name="initiale" length="5" not-null="true" />
+        </property>
+        <many-to-one name="formation" class="metier.Formation" fetch="select">
+            <column name="idFormation" length="25" not-null="true" />
+        </many-to-one>
+        <many-to-one name="ue" class="metier.Ue" fetch="select">
+            <column name="codeUE" length="25" not-null="true" />
+        </many-to-one>
+        <set name="personnels" table="Enseigner" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="libelleMatiere" length="25" not-null="true" />
+            </key>
+            <many-to-many entity-name="metier.Personnel">
+                <column name="idPersonne" length="25" not-null="true" />
+            </many-to-many>
+        </set>
+        <set name="creneaus" table="Creneau" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="libelleMatiere" length="25" not-null="true" />
+            </key>
+            <one-to-many class="metier.Creneau" />
+        </set>
+    </class>
+</hibernate-mapping>

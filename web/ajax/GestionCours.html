@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+     <title>Gestion Enseignant</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="ajax/cssPageGestion.css" type="text/css" />
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+        <script type="text/JavaScript" src="ajax/GestionEnseignant.js"></script>
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <script>
+            $( function() {
+              $( "#datepicker" ).datepicker({ dateFormat: 'yy-mm-dd' }).value;
+            } );
+        </script>
+        
+        
+        <body>
+            <ul>
+                <li><a href="GestionEnseignant">GestionEnseignant</a></li>
+                <li><a href="GestionEtudiant">GestionEtudiant</a></li>
+                <li><a href="" class="active">GestionCours</a></li>
+                <li><a href="GestionPeriode">GestionP&eacuteriode</a></li>
+                <li><a href="login">D&eacuteconnecter</a></li>
+            </ul>
+            <div class="info_choisir">
+                    <span class=""> Choisir formation </span><br/>
+                    <select name="formation" id="formation">
+                        <option value="Formation">Formation</option>
+                        <option value="MIAGEIPM"> IPM</option>
+                        <option value="MIAGEISIAD"> ISIAD </option>
+                    </select>
+                </div>
+               
+                <div class="info_choisir">
+                 <span> Choisir cours: </span><br/>
+                    <select name="cours" id="cours">
+
+                    </select>
+                 </div><br/>
+            <span> Libelle Matiere </span><input type="text" id="nom" style="width:150px" onkeyup="this.value=this.value.replace(/[^a-zA-Z, ]+/g,'')"><br/>
+            <span id ="verifPersonneRes"></span><br/>
+            <div>
+                <input type="button" id ="btn_consulter" value="Consulter" disabled="disabled" />
+                <input type="button" id ="btn_ajouter" value="Ajouter" disabled="disabled" />
+                <input type="button" id ="btn_supprimer" value="Supprimer" disabled="disabled" />
+            </div>
+            
+            <div id="infoAfficher" style="display:none">
+                <form onsubmit="return false">
+                    <table border="2">
+                        <tr><th colspan="2">Matiere</th></tr>
+                            <tr><td>LibelleMatier</td><td><input type="text" value="" id="nom" disabled='' style="width:60px"></td></tr>
+                
+                            <tr><td>Formation</td><td><input type="text" value="" id="prenom" disabled='' style="width:60px"></td></tr>
+
+                            <tr><td>Numero etudiant</td><td><input type="number" value="" id="numE" min="10000000" max="99999999" title="8 chiffres"></td></tr>
+
+                            <tr><td>Prenom usage</td><td><input type="text" value="" id="prenomUsage" disabled='' style="width:60px"></td></tr>
+
+                            <tr><td>Numero Tel</td><td><input type="number" value="" id="numTel" min="100000000" max="9999999999" title="10 chiffres"></td></tr>
+
+                            <tr><td>Adresse Mail</td><td><input type="email" value="" id="eMail" pattern="^[a-z0-9]+([._\\-]*[a-z0-9])*@([a-z0-9]+[-a-z0-9]*[a-z0-9]+.){1,63}[a-z0-9]+$" title="Respectez format d'email"></tr>
+
+                            <tr><td>Type</td><td><input type="text" maxlength="2" id="formation"></td></tr>
+                    
+                            <tr><td>Date de naissance</td><td><input type="text"></td></tr>
+
+                            <tr><td>Mot de passe</td><td><input type="text" name="-----"></td></tr>
+                            
+                            <td><input type="number" value="" id="numTel" min="0099999999" max="999999999" title="10 chiffres"></td>
+                            <td><input type="email" value="" id="eMail" pattern="^[a-z0-9]+([._\\-]*[a-z0-9])*@([a-z0-9]+[-a-z0-9]*[a-z0-9]+.){1,63}[a-z0-9]+$" title="Respectez format d'email"></td>
+                    </table>
+                    <input type="submit" id ="btn_modifier" value="modifier" style="display: none"/>
+                    <input type="submit" id ="btn_valider" value="valider" style="display: none"/>
+                </form>
+            </div>
+            
+            
+        </div>
+        <script type="text/JavaScript" src="ajax/GestionEnseignant.js"></script>
+        </body>
+</html>

@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Mar 18, 2020 6:08:12 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="metier.Affecter" table="Affecter" catalog="db_21509151" optimistic-lock="version">
+        <composite-id name="id" class="metier.AffecterId">
+            <key-property name="idPersonne" type="string">
+                <column name="idPersonne" length="25" />
+            </key-property>
+            <key-property name="idCreneau" type="string">
+                <column name="idCreneau" length="25" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="creneau" class="metier.Creneau" update="false" insert="false" fetch="select">
+            <column name="idCreneau" length="25" />
+        </many-to-one>
+        <many-to-one name="personnel" class="metier.Personnel" update="false" insert="false" fetch="select">
+            <column name="idPersonne" length="25"/>
+        </many-to-one>
+        <property name="signatureEnseignant"  type="binary">
+            <column name="signatureEnseignant"  />
+        </property>
+        <property name="etatPresence" type="string">
+            <column name="etatPresence" length="25" />
+        </property>
+         <property name="etatValide" type="string">
+            <column name="etatValide" length="5" />
+        </property>
+    </class>
+</hibernate-mapping>

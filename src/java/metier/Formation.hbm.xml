@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Mar 18, 2020 6:08:12 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="metier.Formation" table="Formation" catalog="db_21509151" optimistic-lock="version">
+        <id name="idFormation" type="string">
+            <column name="idFormation" length="25" />
+            <generator class="assigned" />
+        </id>
+        <property name="libelleFormation" type="string">
+            <column name="libelleFormation" length="100" not-null="true" />
+        </property>
+        <property name="diplomeFormation" type="string">
+            <column name="diplomeFormation" length="25" not-null="true" />
+        </property>
+        <property name="rythme" type="string">
+            <column name="rythme" length="25" not-null="true" />
+        </property>
+        <set name="matieres" table="Matiere" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="idFormation" length="25" not-null="true" />
+            </key>
+            <one-to-many class="metier.Matiere" />
+        </set>
+        <set name="personnels" table="Inscrir" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="idFormation" length="25" not-null="true" />
+            </key>
+            <many-to-many entity-name="metier.Personnel">
+                <column name="idPersonne" length="25" not-null="true" />
+            </many-to-many>
+        </set>
+    </class>
+</hibernate-mapping>
