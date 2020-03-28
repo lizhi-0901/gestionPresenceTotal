@@ -557,28 +557,28 @@ public class bd {
     }
     
     
-    public static void ajouterMatiere(String libelleMatiere,String idFormation){
-        session=null;
-            try {
-                session = HibernateUtil.getSessionFactory().getCurrentSession();
-                transaction  = session.beginTransaction();
-                Query query =session.createSQLQuery("INSERT INTO Matiere(libelleMatiere,codeUE,idFormation,initiale) VALUES(:libelleMatiere,:codeUE,:idFormation,:initiale) ");
-                
-                String initiale=libelleMatiere.substring(0, 3);
-                query.setParameter("libelleMatiere", libelleMatiere);
-                
-                String codeUE="IPM201901";
-                query.setParameter("codeUE",codeUE );
-                query.setParameter("idFormation", idFormation);
-                query.setParameter("initiale", initiale);
-                query.executeUpdate();
-                transaction.commit();
-            }
-            catch (RuntimeException e) {
-                transaction.rollback();
-                throw e;
-            }
-    }
+//    public static void ajouterMatiere(String libelleMatiere,String idFormation){
+//        session=null;
+//            try {
+//                session = HibernateUtil.getSessionFactory().getCurrentSession();
+//                transaction  = session.beginTransaction();
+//                Query query =session.createSQLQuery("INSERT INTO Matiere(libelleMatiere,codeUE,idFormation,initiale) VALUES(:libelleMatiere,:codeUE,:idFormation,:initiale) ");
+//                
+//                String initiale=libelleMatiere.substring(0, 3);
+//                query.setParameter("libelleMatiere", libelleMatiere);
+//                
+//                String codeUE="IPM201901";
+//                query.setParameter("codeUE",codeUE );
+//                query.setParameter("idFormation", idFormation);
+//                query.setParameter("initiale", initiale);
+//                query.executeUpdate();
+//                transaction.commit();
+//            }
+//            catch (RuntimeException e) {
+//                transaction.rollback();
+//                throw e;
+//            }
+//    }
     
 //     public static void ajouterPeriode(String dateDeb,String dateFin,String,String typePeriode){
 //        session=null;
@@ -835,11 +835,148 @@ public class bd {
         return listcreneau;
         }
          
-         
+        public static String ajouterMatiere(String libelleMatiere,String idFormation)throws ClassNotFoundException, SQLException{
+		{
+		/*----- Création de la connexion à la base de données -----*/
+		if (bd.cx == null)
+			bd.connexion();
 
-                  
+		/*----- Requête SQL -----*/
+		String sql = "INSERT INTO Matiere VALUES (?,?,?,?)";
+                String codeUE="IPM201901";
+                String initiale=libelleMatiere.substring(0, 3);
+		/*----- Ouverture de l'espace de requête -----*/
+		try (PreparedStatement st = bd.cx.prepareStatement(sql))
+			{
+			/*----- Exécution de la requête -----*/
+			st.setString(1, libelleMatiere);
+                        st.setString(2, codeUE);
+                        st.setString(3, idFormation);
+                        st.setString(4, initiale);
+			return st.executeUpdate() + "";
+			}
+		catch (SQLException ex)
+			{
+			throw new SQLException("Exception addMot() : Problème SQL - " + ex.getMessage());
+			}
+		}
+    }
+    
+    public static String supprimerMatiere (String mot) throws ClassNotFoundException, SQLException
+		{
+		/*----- Création de la connexion à la base de données -----*/
+		if (bd.cx == null)
+			bd.connexion();
+
+		/*----- Requête SQL -----*/
+		String sql = "DELETE FROM Matiere WHERE libelleMatiere = ?";
+
+		try (PreparedStatement st = bd.cx.prepareStatement(sql))
+			{
+			/*----- Exécution de la requête -----*/
+			st.setString(1, mot);
+			return st.executeUpdate() + "";
+			}
+		catch (SQLException ex)
+			{
+			throw new SQLException("Exception supprMot() : Problème SQL - " + ex.getMessage());
+			}
+		}
+    
+    public static void ajouterPeriode (String dateDeb, String dateFin, String typePeriode){
+            session=null;
+            session=HibernateUtil.getSessionFactory().openSession();
+            transaction=session.beginTransaction();
+            Periode p=new Periode();
             
+            p.setDateDeb(dateDeb);
+            p.setDateFin(dateFin);
+            p.setTypePeriode(typePeriode);
+            System.out.println(p.getTypePeriode());
+            System.out.println(p.getDateFin());
+            System.out.println(p.getDateDeb());
+
+            session.save(p);
+            transaction.commit();
+       }
+    
+    public static void supprimerPeriode (String dateDeb, String dateFin) {
+        session=HibernateUtil.getSessionFactory().getCurrentSession();
+        transaction=session.beginTransaction();
+           
+          
+           Query query =session.createSQLQuery("Delete from Periode "+
+                                               "Where dateDeb=:dated "+
+                                               "and dateFin=:datef ");
+           
             
+            query.setParameter("dated", dateDeb);
+            query.setParameter("datef", dateFin);
+            query.executeUpdate();
+        
+            transaction.commit();
+      } 
+      public static String existCours (String nomC) throws ClassNotFoundException, SQLException
+		{
+		/*----- Création de la connexion à la base de données -----*/
+		if (bd.cx == null)
+			bd.connexion();
+
+		/*----- Requête SQL -----*/
+		String sql = "SELECT libelleMatiere FROM Matiere WHERE libelleMatiere=?";
+
+		/*----- Ouverture de l'espace de requête -----*/
+		try (PreparedStatement st = bd.cx.prepareStatement(sql))
+			{
+			/*----- Exécution de la requête -----*/
+			st.setString(1, nomC);
+			try (ResultSet rs = st.executeQuery())
+				{
+				/*----- Lecture du contenu du ResultSet -----*/
+				if (rs.next())
+					return "true";
+				else
+					return "false";
+				}
+			}
+		catch (SQLException ex)
+			{
+			throw new SQLException("Exception existPersonne() : Problème SQL - " + ex.getMessage());
+			}
+		}
+        public static List<Periode>  consulterPeriode (String dateDeb, String dateFin){
+             if(transaction==null){
+            transaction  = session.beginTransaction();
+        }
+
+        List list=session.createCriteria(Periode.class)
+                                .add(Restrictions.like("dateDeb", dateDeb))
+                                .add(Restrictions.like("dateFin", dateFin)).list();
+
+        return list;       
+       }          
+            
+        public static List<Matiere> getAllMatieres(String libelleFormation){
+        if(transaction==null){
+            transaction=session.beginTransaction();
+        } 
+        List<Matiere> listMatieres=new ArrayList<>();
+        try{
+         listMatieres =session.createSQLQuery( "select  m.libelleMatiere,m.idFormation "+ 
+                                                             "from Matiere m, Formation f "+
+                                                             "where f.idFormation =m.idFormation "+
+                                                             "and f.libelleFormation=" +"'"+libelleFormation+"'").list();
+           
+        }catch(HibernateException hibernateEx){
+              try {
+                transaction.rollback();
+            } catch(RuntimeException runtimeEx){
+                System.err.printf("Couldn’t Roll Back Transaction", runtimeEx);
+                listMatieres= null;
+            }
+    }
+    return listMatieres;
+    }    
 
 	/*----------------------------*/
 	/* Programme principal (test) */
@@ -882,5 +1019,11 @@ public class bd {
 	public static void main (String[] s) throws ParseException, ClassNotFoundException, SQLException
 
 		{   
+                    List<Periode> ps = bd.consulterPeriode("2019-09-02", "2019-10-20");
+                    for(Periode p:ps){
+                          String type=p.getTypePeriode();
+                          System.out.println(type);
+               
+            } 
                   }
 }

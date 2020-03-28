@@ -18,7 +18,7 @@
             <column name="prenom" length="25" not-null="true" />
         </property>
         <property name="dateNaissance" type="string">
-            <column name="dateNaissance" length="10" not-null="true" />
+            <column name="dateNaissance" length="10"  />
         </property>
         <property name="type" type="string">
             <column name="type" length="25" not-null="true" />
@@ -36,7 +36,7 @@
             <column name="prenomUsage" length="25" />
         </property>
         <property name="adresse" type="string">
-            <column name="adresse" length="50" not-null="true" />
+            <column name="adresse" length="50"  />
         </property>
         <property name="entreprise" type="string">
             <column name="entreprise" length="50" />

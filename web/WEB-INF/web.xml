@@ -101,20 +101,28 @@
         <servlet-class>action.ServletConsulterEtudiant</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>ServletActionCours</servlet-name>
-        <servlet-class>action.ServletActionCours</servlet-class>
+        <servlet-name>saisirheureEtu</servlet-name>
+        <jsp-file>/ajax/saisirheureetudiant.html</jsp-file>
     </servlet>
     <servlet>
-        <servlet-name>ServletListCours</servlet-name>
-        <servlet-class>action.ServletListCours</servlet-class>
+        <servlet-name>ServletActionCours</servlet-name>
+        <servlet-class>action.ServletActionCours</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>ServletVerifierCours</servlet-name>
         <servlet-class>action.ServletVerifierCours</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>saisirheureEtu</servlet-name>
-        <jsp-file>/ajax/saisirheureetudiant.html</jsp-file>
+        <servlet-name>ServletActionPeriode</servlet-name>
+        <servlet-class>action.ServletActionPeriode</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ServletConsulterPeriode</servlet-name>
+        <servlet-class>action.ServletConsulterPeriode</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ServletListCours</servlet-name>
+        <servlet-class>action.ServletListCours</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>GestionEtudiant</servlet-name>
@@ -135,18 +143,6 @@
     <servlet-mapping>
         <servlet-name>ServletConsulterEtudiant</servlet-name>
         <url-pattern>/ServletConsulterEtudiant</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>ServletActionCours</servlet-name>
-        <url-pattern>/ServletActionCours</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>ServletListCours</servlet-name>
-        <url-pattern>/ServletListCours</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>ServletVerifierCours</servlet-name>
-        <url-pattern>/ServletVerifierCours</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>ServletConnection</servlet-name>
@@ -231,6 +227,26 @@
     <servlet-mapping>
         <servlet-name>saisirheureEtu</servlet-name>
         <url-pattern>/saisirheureEtu</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ServletActionCours</servlet-name>
+        <url-pattern>/ServletActionCours</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ServletVerifierCours</servlet-name>
+        <url-pattern>/ServletVerifierCours</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ServletActionPeriode</servlet-name>
+        <url-pattern>/ServletActionPeriode</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ServletConsulterPeriode</servlet-name>
+        <url-pattern>/ServletConsulterPeriode</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ServletListCours</servlet-name>
+        <url-pattern>/ServletListCours</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

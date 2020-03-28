@@ -19,7 +19,7 @@
 <div class="login">
 	<!-- Main Form -->
 	<form method="get" action="ServletConnection">
-		<table class="login_tab" border="3">
+		<table class="login_tab" >
 			<tr>
 				<th>
 					Authentification 
@@ -31,7 +31,7 @@
 			</td></tr>
 	        
 	        <tr><td>
-	        	<input class="login" type="text"  id="lg_username" name="lg_username" >
+	        	<input class="in" type="text"  id="lg_username" name="lg_username" >
 	        </td></tr>    
 			
 	        <tr><td>
@@ -39,7 +39,7 @@
 	        </td></tr>
 	       
 	        <tr><td>
-					<input class="login" type="password"  id="lg_password" name="lg_password" >	
+					<input class="in" type="password"  id="lg_password" name="lg_password" >	
 			</td></tr>
 			
 	        <tr><td>

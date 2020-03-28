@@ -51,6 +51,11 @@ a:hover {
 .main-login-form {
   position: relative;
 }
+in{
+    outline-style: none ;
+    border: 1px solid #ccc; 
+    border-radius: 3px;
+}
 .login {
   border: 0;
   box-shadow: 0 0 0;
@@ -60,6 +65,7 @@ a:hover {
   padding: 7px 0;
   font-weight: bold;
   height:auto;
+  margin-left: 35%;
 }
 .login-form-1 .form-control::-webkit-input-placeholder {
   color: #999999;
