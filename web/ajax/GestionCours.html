@@ -28,8 +28,8 @@ and open the template in the editor.
                 <li><a href="GestionPeriode">GestionP&eacuteriode</a></li>
                 <li><a href="login">D&eacuteconnecter</a></li>
             </ul>
-            <div class="info_choisir">
-                    <span class=""> Choisir formation </span><br/>
+            <div class="info_choisir" style="margin-top: 20px">
+                    <span class=""> Choisir formation </span>
                     <select name="formation" id="formation">
                         <option value="Formation">Formation</option>
                         <option value="MIAGEIPM"> IPM</option>
@@ -38,17 +38,17 @@ and open the template in the editor.
                 </div>
                
                 <div class="info_choisir">
-                 <span> Liste Cours: </span><br/>
+                 <span> Liste Cours: </span>
                     <select name="cours" id="cours">
 
                     </select>
                  
                  </div><br/>
-                 <input type="button" id ="btn_supprimer" value="Supprimer" /><br/>
+                 <input type="button" class="btn_v" id ="btn_supprimer" value="Supprimer" /><br/>
             <span> Libelle Cours </span><input type="text" id="nomC" style="width:150px" onkeyup="this.value=this.value.replace(/[^a-zA-Z, ]+/g,'')"><br/>
             <span id ="verifPersonneRes"></span><br/>
             <div>
-                <input type="button" id ="btn_ajouter" value="Ajouter" disabled="disabled" />
+                <input type="button" id ="btn_ajouter" class="btn_v" value="Ajouter" disabled="disabled" />
                 
             </div>
             

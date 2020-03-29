@@ -26,18 +26,19 @@ and open the template in the editor.
                 <li><a href="login">D&eacuteconnecter</a></li>
             </ul>
         <div>
+            <div class="info_choisir" style="margin-top: 20px">
             <span> Nom:  </span><input type="text" id="nomPersonne" style="width:60px" onkeyup="this.value=this.value.replace(/[^a-zA-Z]/g,'')">
             <span> Prenom: </span><input type="text" id="prenomPersonne" style="width:60px" onkeyup="this.value=this.value.replace(/[^a-zA-Z]/g,'')"><br/>
-            <span id ="verifPersonneRes"></span><br/>
+            <br/><span id ="verifPersonneRes"></span><br/>
+            
             <div>
-                <input type="button" id ="btn_consulter" value="Consulter" disabled="disabled" />
-                <input type="button" id ="btn_ajouter" value="Ajouter" disabled="disabled" />
-                <input type="button" id ="btn_supprimer" value="Supprimer" disabled="disabled" />
+                <input type="button" id ="btn_consulter" class="btn_v" value="Consulter" disabled="disabled" />
+                <input type="button" id ="btn_ajouter" class="btn_v" value="Ajouter" disabled="disabled" />
+                <input type="button" id ="btn_supprimer" class="btn_v" value="Supprimer" disabled="disabled" />
             </div>
             
-            <div id="infoAfficher" style="display:none">
-                <form onsubmit="return false">
-                    <table border="2">
+            <div id="infoAfficher" style="display:none"><form onsubmit="return false">
+                    <table border="2" style="margin:auto">
                         <tr><th colspan="2">Etudiant</th></tr>
                             <tr><td>Nom</td><td><input type="text" value="" id="nom" disabled='' style="width:60px"></td></tr>
                 
@@ -56,11 +57,12 @@ and open the template in the editor.
                             <tr><td>Entreprise Mail</td><td><input type="email" value="" id="eMailE" pattern="^[a-z0-9]+([._\\-]*[a-z0-9])*@([a-z0-9]+[-a-z0-9]*[a-z0-9]+.){1,63}[a-z0-9]+$" title="Respectez format d'email"></tr>
                             
                     </table>
-                    <input type="submit" id ="btn_modifier" value="modifier" style="display: none"/>
-                    <input type="submit" id ="btn_valider" value="valider" style="display: none"/>
+                    <input type="submit" id ="btn_modifier" class="btn_v" value="modifier" style="display: none"/>
+                    <input type="submit" id ="btn_valider" class="btn_v" value="valider" style="display: none"/>
                 </form>
             </div>
             
+        </div>
         </div>
         </body>
 </html>
