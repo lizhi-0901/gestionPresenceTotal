@@ -36,7 +36,14 @@ public class Personnel  implements java.io.Serializable {
     public Personnel() {
     }
 
-	
+    public Personnel(String idPersonne, String nom, String prenom,String photo) {
+
+        this.idPersonne = idPersonne;
+        this.nom = nom;
+        this.prenom = prenom;
+        this.photo =photo;
+        
+    }
 
     public Personnel(String idPersonne, String motDePasse, String nom, String prenom, String type, String adresseMail) {
 

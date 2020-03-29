@@ -176,14 +176,11 @@ public class bd {
             query.setParameter("idGroupe", idGroupe);
             listEtudiants=query.list();
             
-        }catch(HibernateException hibernateEx){
-              try {
-                transaction.rollback();
-            } catch(RuntimeException runtimeEx){
-                System.err.printf("Couldn’t Roll Back Transaction", runtimeEx);
-                listEtudiants= null;
+        }catch(Exception e){
+               System.out.println(e.getMessage());
+               listEtudiants=null;
             }
-    }
+    
 
      return listEtudiants;
      
@@ -1028,12 +1025,21 @@ public class bd {
 	public static void main (String[] s) throws ParseException, ClassNotFoundException, SQLException
 
 		{   
-                    List<Periode> lp;
-                    lp=bd.consulterPeriode("2019-09-02", "2019-10-20");
-                    for(Periode p:lp){
-                        String type=p.getTypePeriode();
-                            System.out.println(type);
-                
+                    List<Personnel> listEtudiants=bd.getEtudiants("IPM1920TD1");
+            for(Personnel p:listEtudiants){
+//                out.println("<etudiant>");
+                    String id=p.getIdPersonne();
+                    String nom=p.getNom();
+                    String prenom=p.getPrenom();
+                   System.out.println(id+" "+nom+" "+prenom);
+                    String photo=p.getPhoto();
+//                    out.println("<id>" + id + "</id>");
+//                    out.println("<nom>" + nom + "</nom>");
+//                    out.println("<prenom>" + prenom + "</prenom>");
+//                    out.println("<photo>" + photo + "</photo>");              
+//                out.println("</etudiant>");
+                       
+           
             } 
                   }
 }

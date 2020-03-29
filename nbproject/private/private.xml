@@ -3,16 +3,17 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/lizhiwang/Documents/NetBeansProjects/GestionPresence/web/ajax/NavigateurEtudiant.html</file>
-            <file>file:/C:/Users/lizhiwang/Documents/NetBeansProjects/GestionPresence/src/java/action/ServletConnection.java</file>
             <file>file:/C:/Users/lizhiwang/Documents/NetBeansProjects/GestionPresence/src/java/hibernate.cfg.xml</file>
-            <file>file:/C:/Users/lizhiwang/Documents/NetBeansProjects/GestionPresence/web/ajax/saisirheureetudiant.html</file>
-            <file>file:/C:/Users/lizhiwang/Documents/NetBeansProjects/GestionPresence/web/WEB-INF/web.xml</file>
-            <file>file:/C:/Users/lizhiwang/Documents/NetBeansProjects/GestionPresence/web/ajax/GestionEnseignant.js</file>
-            <file>file:/C:/Users/lizhiwang/Documents/NetBeansProjects/GestionPresence/web/ajax/GestionPeriode.html</file>
-            <file>file:/C:/Users/lizhiwang/Documents/NetBeansProjects/GestionPresence/web/ajax/etufeuille.html</file>
+            <file>file:/C:/Users/lizhiwang/Documents/NetBeansProjects/GestionPresence/web/ajax/GestionPeriode.js</file>
+            <file>file:/C:/Users/lizhiwang/Documents/NetBeansProjects/GestionPresence/src/java/bd/util.java</file>
+            <file>file:/C:/Users/lizhiwang/Documents/NetBeansProjects/GestionPresence/web/ajax/valider.js</file>
+            <file>file:/C:/Users/lizhiwang/Documents/NetBeansProjects/GestionPresence/src/java/action/ServletRespon.java</file>
             <file>file:/C:/Users/lizhiwang/Documents/NetBeansProjects/GestionPresence/web/ajax/validationResp.html</file>
+            <file>file:/C:/Users/lizhiwang/Documents/NetBeansProjects/GestionPresence/web/ajax/etufeuille.html</file>
+            <file>file:/C:/Users/lizhiwang/Documents/NetBeansProjects/GestionPresence/web/ajax/GestionPeriode.html</file>
             <file>file:/C:/Users/lizhiwang/Documents/NetBeansProjects/GestionPresence/src/java/bd/bd.java</file>
+            <file>file:/C:/Users/lizhiwang/Documents/NetBeansProjects/GestionPresence/src/java/action/ServletConsulterPeriode.java</file>
+            <file>file:/C:/Users/lizhiwang/Documents/NetBeansProjects/GestionPresence/web/ajax/etufeuille.js</file>
         </group>
     </open-files>
 </project-private>
