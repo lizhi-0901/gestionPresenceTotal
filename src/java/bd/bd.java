@@ -1030,6 +1030,10 @@ public class bd {
 		{   
                     List<Periode> lp;
                     lp=bd.consulterPeriode("2019-09-02", "2019-10-20");
-                    System.out.println(bd.output(lp, 0));
+                    for(Periode p:lp){
+                        String type=p.getTypePeriode();
+                            System.out.println(type);
+                
+            } 
                   }
 }

@@ -74,7 +74,7 @@
     </servlet>
     <servlet>
         <servlet-name>gestionE</servlet-name>
-        <jsp-file>/ajax/GestionE.html</jsp-file>
+        <jsp-file>/ajax/NavigateurEnseigant.html</jsp-file>
     </servlet>
     <servlet>
         <servlet-name>ServletVerifierEnseignant</servlet-name>

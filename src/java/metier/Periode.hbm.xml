@@ -3,7 +3,7 @@
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <!-- Generated Mar 27, 2020 12:45:15 PM by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
-    <class name="metier.Periode" table="Periode" catalog="db_21201682_2" optimistic-lock="version">
+    <class name="metier.Periode" table="Periode" catalog="db_21509151" optimistic-lock="version">
         <id name="noPeriode" type="java.lang.Integer">
             <column name="noPeriode" />
             <generator class="identity" />

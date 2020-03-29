@@ -60,7 +60,7 @@ function getAffecter ()
                              */
                             var tab_c=[];
                             var elt = document.getElementById("tab_feuille");
-                            
+                            deleteTable();
                             for(i=0;i <tab_date.length;i++){
                                     
                                     var tr=document.createElement("tr");//创建行
@@ -209,6 +209,17 @@ function getAffecter ()
                
 	}       
         
+        function deleteTable() {
+	var tb = document.getElementById("tab_feuille");
+        var rowNum=tb.rows.length;
+            for (i=2;i<rowNum;i++)
+            {
+                tb.deleteRow(i);
+                rowNum=rowNum-1;
+                i=i-1;
+            }
+        }
+        
  function valider ()
         {
           
@@ -275,11 +286,11 @@ var logoUT1 = 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAeAB4AAD/4RCiRXhpZgAATU
 
 function downLoadPdf(){
 		
-         alert("fpdf1");
-	 alert("before html2canvas");    
+//         alert("fpdf1");
+//	 alert("before html2canvas");    
           html2canvas(document.getElementById("tab_feuille"), {
               onrendered:function(canvas) {
-                    alert("html2canvas");
+//                    alert("html2canvas");
                   //retourner la dataURL，parametres ：format d'image et niveau définition(0-1)
                   var pageData = canvas.toDataURL('image/JPEG', 1.0);
 

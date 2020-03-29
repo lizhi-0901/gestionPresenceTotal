@@ -12,6 +12,8 @@ function consulterP(){
     var xhr = new XMLHttpRequest();
     document.getElementById("type").value="";
     document.getElementById("btn_ajouter").disabled="";
+    document.getElementById("btn_modifier").disabled="disabled";
+    document.getElementById("btn_supprimer").disabled="disabled";
     
     // Requête au serveur avec les paramètres éventuels.
     xhr.open("GET","ServletConsulterPeriode"+"?date1="+date1+"&date2="+date2,true); 
@@ -26,14 +28,15 @@ function consulterP(){
                             //Mise a jour la page
                             if(type.length>0){
                                 document.getElementById("btn_ajouter").disabled="disabled";
+                                document.getElementById("btn_modifier").disabled="";
+                                document.getElementById("btn_supprimer").disabled="";
                                 document.getElementById("type").value=type;
-                                }                                                    
+                                }
                             }
                     };
     xhr.send();
     
 };
-
 function ajouterP(){
     var date1=document.getElementById("date1").value;
     var date2=document.getElementById("date2").value;
@@ -69,10 +72,12 @@ function modifierP(){
 
 document.addEventListener("DOMContentLoaded", () => {
 
-	document.getElementById("date1").addEventListener("change",consulterP);
-        document.getElementById("date2").addEventListener("change",consulterP);
+//	document.getElementById("date1").addEventListener("change",consulterP);
+//        document.getElementById("date2").addEventListener("change",consulterP);
         document.getElementById("btn_ajouter").addEventListener("click",ajouterP);
         document.getElementById("btn_supprimer").addEventListener("click",supprimerP);
         document.getElementById("btn_modifier").addEventListener("click",modifierP);
+        document.getElementById("date1").addEventListener("click",consulterP);
+        document.getElementById("date2").addEventListener("click",consulterP);
 });
 
