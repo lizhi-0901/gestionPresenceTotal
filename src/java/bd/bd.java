@@ -318,7 +318,8 @@ public class bd {
                                                           "and a.etatPresence=:etat "+
                                                           "and a.idPersonne=:id "+
                                                           "and c.dateDeb like :date "+        
-                                                          "group by c.dateDeb");
+                                                          "group by c.dateDeb "+
+                                                          "order by c.dateDeb ");
         query.setParameter("id", idetudiant);
         query.setParameter("date", "%"+date+"%");
         query.setParameter("etat", etatPresence);
@@ -337,7 +338,8 @@ public class bd {
                                                           "and a.idPersonne=:id "+
                                                           "and c.dateDeb like :date "+
                                                           "and c.heureDeb> 720 "+
-                                                          "group by c.dateDeb");
+                                                          "group by c.dateDeb "+
+                                                          "order by c.dateDeb ");
         query.setParameter("id", idetudiant);
         query.setParameter("date", "%"+date+"%");
         query.setParameter("etat", etatPresence);
@@ -356,7 +358,8 @@ public class bd {
                                                           "and a.idPersonne=:id "+
                                                           "and c.dateDeb like :date "+
                                                           "and c.heureDeb< 630 "+
-                                                          "group by c.dateDeb");
+                                                          "group by c.dateDeb "+
+                                                          "order by c.dateDeb ");
         query.setParameter("id", idetudiant);
         query.setParameter("date", "%"+date+"%");
         query.setParameter("etat", etatPresence);
@@ -734,7 +737,8 @@ public class bd {
                                                           "and c.typeActivite in('Cours','TD','Exam') "+
                                                           "and a.idPersonne=:id "+
                                                           "and c.dateDeb like :date "+
-                                                          "group by c.dateDeb");
+                                                          "group by c.dateDeb "+
+                                                          "order by c.dateDeb ");
         query.setParameter("id", idetudiant);
         query.setParameter("date", "%"+date+"%");
        
@@ -753,7 +757,8 @@ public class bd {
                                                           "and a.idPersonne=:id "+
                                                           "and c.dateDeb like :date "+
                                                           "and c.heureDeb< 630 "+
-                                                          "group by c.dateDeb");
+                                                          "group by c.dateDeb "+
+                                                          "order by c.dateDeb ");
         query.setParameter("id", idetudiant);
         query.setParameter("date", "%"+date+"%");
        
@@ -772,7 +777,8 @@ public class bd {
                                                           "and a.idPersonne=:id "+
                                                           "and c.dateDeb like :date "+
                                                           "and c.heureDeb> 720 "+
-                                                          "group by c.dateDeb");
+                                                          "group by c.dateDeb "+
+                                                          "order by c.dateDeb ");
         query.setParameter("id", idetudiant);
         query.setParameter("date", "%"+date+"%");
        
@@ -789,7 +795,8 @@ public class bd {
                                                           "and c.typeActivite in('projet','conference') "+
                                                           "and a.idPersonne=:id "+
                                                           "and c.dateDeb like :date "+        
-                                                          "group by c.dateDeb");
+                                                          "group by c.dateDeb "+
+                                                          "order by c.dateDeb ");
         query.setParameter("id", idetudiant);
         query.setParameter("date", "%"+date+"%");
        
@@ -808,7 +815,8 @@ public class bd {
                                                           "and a.idPersonne=:id "+
                                                           "and c.dateDeb like :date "+
                                                           "and c.heureDeb< 630 "+
-                                                          "group by c.dateDeb");
+                                                          "group by c.dateDeb "+
+                                                          "order by c.dateDeb ");
         query.setParameter("id", idetudiant);
         query.setParameter("date", "%"+date+"%");
        
@@ -827,7 +835,8 @@ public class bd {
                                                           "and a.idPersonne=:id "+
                                                           "and c.dateDeb like :date "+
                                                           "and c.heureDeb> 720 "+
-                                                          "group by c.dateDeb");
+                                                          "group by c.dateDeb "+
+                                                          "order by c.dateDeb ");
         query.setParameter("id", idetudiant);
         query.setParameter("date", "%"+date+"%");
        
@@ -1019,11 +1028,8 @@ public class bd {
 	public static void main (String[] s) throws ParseException, ClassNotFoundException, SQLException
 
 		{   
-                    List<Periode> ps = bd.consulterPeriode("2019-09-02", "2019-10-20");
-                    for(Periode p:ps){
-                          String type=p.getTypePeriode();
-                          System.out.println(type);
-               
-            } 
+                    List<Periode> lp;
+                    lp=bd.consulterPeriode("2019-09-02", "2019-10-20");
+                    System.out.println(bd.output(lp, 0));
                   }
 }

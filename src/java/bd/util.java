@@ -59,7 +59,15 @@ public class util {
       return map;
    }
    
-   
+//   public static List sortList(List list){
+//       List<String> listsort = new ArrayList<>();
+//       listsort.add((String)list.get(0));
+//       
+//       for(int i=0;i<list.size();i++){
+//           if()
+//       }
+//       
+//   }
 
    
     

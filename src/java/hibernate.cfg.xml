@@ -59,5 +59,6 @@ Contributor(s):
     <mapping resource="metier/Ue.hbm.xml"/>
     <mapping resource="metier/Matiere.hbm.xml"/>
     <mapping resource="metier/Justifier.hbm.xml"/>
+    <mapping resource="metier/Periode.hbm.xml"/>
   </session-factory>
 </hibernate-configuration>

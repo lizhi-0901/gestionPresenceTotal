@@ -111,6 +111,9 @@ public class ServletRespon extends HttpServlet {
                         listm=util.removeDuplicate(list);
                         lista=util.removeDuplicate(list);
                         
+                        //sort 
+                        
+                        
                         // creation hashmap
                         HashMap<String, String> mapem =new HashMap<>();
                         mapem=util.addMap(listem);

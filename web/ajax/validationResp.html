@@ -10,6 +10,10 @@ and open the template in the editor.
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href='ajax/cssRespo.css' rel='stylesheet' type='text/css'>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js"  crossorigin="anonymous"></script>
+        <script src="https://unpkg.com/jspdf@latest/dist/jspdf.min.js"></script>   
+        <script src="https://cdn.bootcss.com/html2canvas/0.4.1/html2canvas.js"></script>
     </head>
     <body>
         
@@ -100,12 +104,12 @@ and open the template in the editor.
                     
                 </table>
             
-          
+          <button class="btn_v" id="btn_pdf" >t&eacutel&eacutecharger en PDF</button>
         </div>
         <div class="div_bouton">
         
         
-        
+       
         <select name="valide" id="etatvalide">
                         <option value="oui"> valide</option>
                         <option value="non"> nonvalide </option>
